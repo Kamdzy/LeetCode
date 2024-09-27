@@ -52,28 +52,30 @@ class Solution:
 # @lc code=end
 
 # Test cases
+def list_to_array(node):
+    """Helper function to convert linked list to array for easy comparison."""
+    result = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
+
+# First test case
 l1 = ListNode(2, ListNode(4, ListNode(3)))
 l2 = ListNode(5, ListNode(6, ListNode(4)))
 result = Solution().addTwoNumbers(l1, l2)
-while result:
-    print(result.val, end=" ")
-    result = result.next
-print() # Should be 7 0 8
+assert list_to_array(result) == [7, 0, 8], "Test case 1 failed"
 
 # Second test case
 l1 = ListNode(0)
 l2 = ListNode(0)
 result = Solution().addTwoNumbers(l1, l2)
-while result:
-    print(result.val, end=" ")
-    result = result.next
-print() # Should be 0
+assert list_to_array(result) == [0], "Test case 2 failed"
 
 # Third test case
 l1 = ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9)))))))
 l2 = ListNode(9, ListNode(9, ListNode(9, ListNode(9))))
 result = Solution().addTwoNumbers(l1, l2)
-while result:
-    print(result.val, end=" ")
-    result = result.next
-print() # Should be 8 9 9 9 0 0 0 1
+assert list_to_array(result) == [8, 9, 9, 9, 0, 0, 0, 1], "Test case 3 failed"
+
+print("All assertions passed.")

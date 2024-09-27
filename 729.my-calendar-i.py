@@ -60,7 +60,15 @@ class MyCalendar:
 # @lc code=end
 
 # Test cases
-myCalendar = MyCalendar();
-print(myCalendar.book(10, 20)) # return True
-print(myCalendar.book(15, 25)) # return False, It can not be booked because time 15 is already booked by another event.
-print(myCalendar.book(20, 30)) # return True, The event can be booked, as the first event takes every time less than 20, but not including 20.
+myCalendar = MyCalendar()
+
+# The event can be booked.
+assert myCalendar.book(10, 20) == True, "Test case 1 failed"
+
+# The event cannot be booked because time 15 is already booked by another event.
+assert myCalendar.book(15, 25) == False, "Test case 2 failed"
+
+# The event can be booked, as the first event takes every time less than 20, but not including 20.
+assert myCalendar.book(20, 30) == True, "Test case 3 failed"
+
+print("All assertions passed.")

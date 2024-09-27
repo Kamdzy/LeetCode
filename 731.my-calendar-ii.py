@@ -41,22 +41,22 @@ class MyCalendarTwo:
 myCalendarTwo = MyCalendarTwo()
 
 # The event can be booked.
-assert myCalendarTwo.book(10, 20) == True
+assert myCalendarTwo.book(10, 20) == True, "Test case 1 failed"
 
 # The event can be booked.
-assert myCalendarTwo.book(50, 60) == True
+assert myCalendarTwo.book(50, 60) == True, "Test case 2 failed"
 
 # The event can be double booked.
-assert myCalendarTwo.book(10, 40) == True
+assert myCalendarTwo.book(10, 40) == True, "Test case 3 failed"
 
 # The event cannot be booked, because it would result in a triple booking.
-assert myCalendarTwo.book(5, 15) == False
+assert myCalendarTwo.book(5, 15) == False, "Test case 4 failed"
 
 # The event can be booked, as it does not use time 10 which is already double booked.
-assert myCalendarTwo.book(5, 10) == True
+assert myCalendarTwo.book(5, 10) == True, "Test case 5 failed"
 
 # The event can be booked, as the time in [25, 40) will be double booked with the third event,
 # the time [40, 50) will be single booked, and the time [50, 55) will be double booked with the second event.
-assert myCalendarTwo.book(25, 55) == True
+assert myCalendarTwo.book(25, 55) == True, "Test case 6 failed"
 
 print("All assertions passed.")

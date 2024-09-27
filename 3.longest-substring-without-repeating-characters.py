@@ -43,6 +43,12 @@ class Solution:
 # @lc code=end
 
 # Test cases
-print(Solution().lengthOfLongestSubstring("abcabcbb")) # Should be 3
-print(Solution().lengthOfLongestSubstring("bbbbb")) # Should be 1
-print(Solution().lengthOfLongestSubstring("pwwkew")) # Should be 3
+# Create an instance of the Solution class
+solution = Solution()
+
+# Test cases with assertions
+assert solution.lengthOfLongestSubstring("abcabcbb") == 3, "Test case 1 failed"
+assert solution.lengthOfLongestSubstring("bbbbb") == 1, "Test case 2 failed"
+assert solution.lengthOfLongestSubstring("pwwkew") == 3, "Test case 3 failed"
+
+print("All assertions passed.")
